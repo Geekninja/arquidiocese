@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @cms_post.title
+%p
+  %b Resume:
+  = @cms_post.resume
+%p
+  %b Content:
+  = @cms_post.content
+%p
+  %b Date:
+  = @cms_post.date
+%p
+  %b Publish:
+  = @cms_post.publish
+%p
+  %b Slider:
+  = @cms_post.slider
+%p
+  %b Thumb:
+  = @cms_post.thumb
+%p
+  %b Thumb active:
+  = @cms_post.thumb_active
+%p
+  %b Post category:
+  = @cms_post.post_category
+
+= link_to 'Edit', edit_cms_post_path(@cms_post)
+\|
+= link_to 'Back', cms_posts_path

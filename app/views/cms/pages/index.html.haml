@@ -1,0 +1,35 @@
+%h1 Listing cms_pages
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Resume
+      %th Content
+      %th Date
+      %th Publish
+      %th Thumb
+      %th Thumb active
+      %th Page category
+      %th
+      %th
+      %th
+
+  %tbody
+    - @cms_pages.each do |cms_page|
+      %tr
+        %td= cms_page.title
+        %td= cms_page.resume
+        %td= cms_page.content
+        %td= cms_page.date
+        %td= cms_page.publish
+        %td= cms_page.thumb
+        %td= cms_page.thumb_active
+        %td= cms_page.page_category
+        %td= link_to 'Show', cms_page
+        %td= link_to 'Edit', edit_cms_page_path(cms_page)
+        %td= link_to 'Destroy', cms_page, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Page', new_cms_page_path

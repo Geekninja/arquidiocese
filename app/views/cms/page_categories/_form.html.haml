@@ -1,0 +1,10 @@
+= simple_form_for(@cms_page_category) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :status
+    = f.input :description
+
+  .form-actions
+    = f.button :submit

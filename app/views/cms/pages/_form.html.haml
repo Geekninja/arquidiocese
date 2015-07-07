@@ -1,0 +1,15 @@
+= simple_form_for(@cms_page) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :resume
+    = f.input :content
+    = f.input :date
+    = f.input :publish
+    = f.input :thumb
+    = f.input :thumb_active
+    = f.association :page_category
+
+  .form-actions
+    = f.button :submit

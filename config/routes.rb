@@ -1,5 +1,74 @@
 Rails.application.routes.draw do
 
+  namespace :cms do
+    resources :post_categories
+  end
+  namespace :cms do
+    resources :page_categories
+  end
+  namespace :cms do
+    resources :pages
+  end
+  namespace :cms do
+    resources :posts
+  end
+  namespace :cms do
+    resources :posts
+  end
+  namespace :cms do
+    resources :post_categories
+  end
+  namespace :cms do
+    resources :page_categories
+  end
+  namespace :cms do
+    resources :pages
+  end
+  namespace :cms do
+    resources :posts
+  end
+  namespace :cms do
+    resources :post_categories
+  end
+  namespace :cms do
+    resources :page_categories
+  end
+  namespace :cms do
+    resources :pages
+  end
+  namespace :cms do
+    resources :posts
+  end
+  namespace :cms do
+    resources :posts
+  end
+  namespace :cms do
+    resources :posts
+  end
+  namespace :cms do
+    resources :post_categories
+  end
+  namespace :cms do
+    resources :page_categories
+  end
+  namespace :cms do
+    resources :pages
+  end
+  namespace :cms do
+    resources :posts
+  end
+  namespace :cms do
+    resources :post_categories
+  end
+  namespace :cms do
+    resources :page_categories
+  end
+  namespace :cms do
+    resources :pages
+  end
+  namespace :cms do
+    resources :posts
+  end
    namespace :cms, path: 'conteudo' do
      root 'pages#index'
      resources :posts, path: 'postagens'

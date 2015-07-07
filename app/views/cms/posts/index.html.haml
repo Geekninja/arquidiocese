@@ -1,0 +1,37 @@
+%h1 Listing cms_posts
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Resume
+      %th Content
+      %th Date
+      %th Publish
+      %th Slider
+      %th Thumb
+      %th Thumb active
+      %th Post category
+      %th
+      %th
+      %th
+
+  %tbody
+    - @cms_posts.each do |cms_post|
+      %tr
+        %td= cms_post.title
+        %td= cms_post.resume
+        %td= cms_post.content
+        %td= cms_post.date
+        %td= cms_post.publish
+        %td= cms_post.slider
+        %td= cms_post.thumb
+        %td= cms_post.thumb_active
+        %td= cms_post.post_category
+        %td= link_to 'Show', cms_post
+        %td= link_to 'Edit', edit_cms_post_path(cms_post)
+        %td= link_to 'Destroy', cms_post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Post', new_cms_post_path

@@ -1,0 +1,2 @@
+module Cms::PageCategoriesHelper
+end

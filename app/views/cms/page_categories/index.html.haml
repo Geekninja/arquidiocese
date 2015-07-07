@@ -1,0 +1,25 @@
+%h1 Listing cms_page_categories
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Status
+      %th Description
+      %th
+      %th
+      %th
+
+  %tbody
+    - @cms_page_categories.each do |cms_page_category|
+      %tr
+        %td= cms_page_category.name
+        %td= cms_page_category.status
+        %td= cms_page_category.description
+        %td= link_to 'Show', cms_page_category
+        %td= link_to 'Edit', edit_cms_page_category_path(cms_page_category)
+        %td= link_to 'Destroy', cms_page_category, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Page category', new_cms_page_category_path

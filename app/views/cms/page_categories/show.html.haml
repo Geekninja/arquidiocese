@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @cms_page_category.name
+%p
+  %b Status:
+  = @cms_page_category.status
+%p
+  %b Description:
+  = @cms_page_category.description
+
+= link_to 'Edit', edit_cms_page_category_path(@cms_page_category)
+\|
+= link_to 'Back', cms_page_categories_path
