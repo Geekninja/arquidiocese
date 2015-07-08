@@ -1,0 +1,12 @@
+/*
+*= require templates/material/vendors/fullcalendar/fullcalendar
+*= require templates/material/vendors/sweet-alert/sweet-alert.min
+*= require templates/material/vendors/material-icons/material-design-iconic-font.min
+*= require templates/material/vendors/socicon/socicon.min
+*= require templates/material/css/app.min.1
+*= require templates/material/css/app.min.2
+*= require redactor-rails
+*/
+.redactor-editor,
+.redactor-box,
+.redactor-box textarea{z-index: 5!important;}
