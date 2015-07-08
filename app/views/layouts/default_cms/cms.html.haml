@@ -6,10 +6,10 @@
     = stylesheet_link_tag  'material', media: 'all'
     = csrf_meta_tags
   %body.toggled.sw-toggled
-    //  = render "layouts/partials/nav" if user_signed_in?
+    = render "layouts/default_cms/partials/nav"
     %section#main
-      //  = render "layouts/partials/aside"
-      //  = render "layouts/partials/sidebar"
+      = render "layouts/default_cms/partials/aside"
+      = render "layouts/default_cms/partials/sidebar"
       %section#content
         %div.container
           = yield

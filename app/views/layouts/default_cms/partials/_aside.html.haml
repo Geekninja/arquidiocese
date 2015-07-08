@@ -1,0 +1,30 @@
+%aside#chat
+  %ul.tab-nav.tn-justified{:role => "tablist", :style => "overflow: hidden; outline: none;", :tabindex => "0"}
+    %li.active{:role => "presentation"}
+      %a{"aria-controls" => "friends", "aria-expanded" => "true", "data-toggle" => "tab", :href => "#friends", :role => "tab"} Pessoas
+    %li{:role => "presentation"}
+      %a{"aria-controls" => "online", "aria-expanded" => "false", "data-toggle" => "tab", :href => "#online", :role => "tab"} Meu Setor
+  .chat-search
+    .fg-line
+      %input.form-control{:placeholder => "Pesquisar...", :type => "text"}/
+  .tab-content
+    #friends.tab-pane.fade.active.in{:role => "tabpanel"}
+      .listview
+        %a.lv-item{:href => ""}
+          .media
+            .pull-left.p-relative
+              .lv-avatar.bgm-blue{"style": 'margin-bottom: 20px'}
+            .media-body
+              .lv-title
+              %small.lv-small
+                Último acesso
+                %br/
+    #online.tab-pane.fade{:role => "tabpanel"}
+      .listview
+        %a.lv-item{:href => ""}
+          .media
+            .pull-left.p-relative
+              %i.chat-status-busy
+            .media-body
+              .lv-title Jonathan Morris
+              %small.lv-small Available
