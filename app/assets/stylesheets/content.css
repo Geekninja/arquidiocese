@@ -10,18 +10,18 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require js/bxslider/jquery.bxslider
- *= require js/flexslider/flexslider
- *= require js/radial-progress/style
- *= require css/animate
- *= require css/bootstrap.min
- *= require js/bootstrap-progressbar/bootstrap-progressbar-3.2.0.min
- *= require js/jqueryui/jquery-ui
- *= require js/jqueryui/jquery-ui.structure
- *= require js/fancybox/jquery.fancybox
- *= require fonts/fonts
- *= require css/main-default
- *= require js/rs-plugin/css/settings
- *= require js/rs-plugin/css/settings-custom
- *= require js/rs-plugin/videojs/video-js
+ *= require templates/content/js/bxslider/jquery.bxslider
+ *= require templates/content/js/flexslider/flexslider
+ *= require templates/content/js/radial-progress/style
+ *= require templates/content/css/animate
+ *= require templates/content/css/bootstrap.min
+ *= require templates/content/js/bootstrap-progressbar/bootstrap-progressbar-3.2.0.min
+ *= require templates/content/js/jqueryui/jquery-ui
+ *= require templates/content/js/jqueryui/jquery-ui.structure
+ *= require templates/content/js/fancybox/jquery.fancybox
+ *= require templates/content/fonts/fonts
+ *= require templates/content/css/main-default
+ *= require templates/content/js/rs-plugin/css/settings
+ *= require templates/content/js/rs-plugin/css/settings-custom
+ *= require templates/content/js/rs-plugin/videojs/video-js
  */
