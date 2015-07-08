@@ -1,37 +1,28 @@
-%h1 Listing cms_posts
+.card
+  .card-header.ch-alt
+    %h2
+      Postagens
+      = link_to 'Novo Post', new_cms_post_path, class: 'btn btn-success pull-right'
+      %small Listagem de posts
+  .table-responsive{:style => "overflow: hidden; outline: none;", :tabindex => "3"}
+    %table#data-table-command.table.table-striped.table-vmiddle.bootgrid-table
+      %thead
+        %tr
+          %th #
+          %th Título
+          %th Categoria da Postagem
+          %th Publicado
+          %th data
+          %th{:colspan => '3'} Action
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th Resume
-      %th Content
-      %th Date
-      %th Publish
-      %th Slider
-      %th Thumb
-      %th Thumb active
-      %th Post category
-      %th
-      %th
-      %th
-
-  %tbody
-    - @cms_posts.each do |cms_post|
-      %tr
-        %td= cms_post.title
-        %td= cms_post.resume
-        %td= cms_post.content
-        %td= cms_post.date
-        %td= cms_post.publish
-        %td= cms_post.slider
-        %td= cms_post.thumb
-        %td= cms_post.thumb_active
-        %td= cms_post.post_category
-        %td= link_to 'Show', cms_post
-        %td= link_to 'Edit', edit_cms_post_path(cms_post)
-        %td= link_to 'Destroy', cms_post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Post', new_cms_post_path
+      %tbody
+        - @cms_posts.each_with_index do |cms_post, i|
+          %tr
+            %td= i+1
+            %td= cms_post.title
+            %td= cms_post.post_category
+            %td= status_helper (cms_post.publish)
+            %td= cms_post.created_at.strftime('%d-%m-%Y')
+            %td.col-md-2
+              = link_to '', edit_cms_post_path(cms_post), class: 'md md-edit btn btn-primary'
+              = link_to '', cms_post, :method => :delete, class: 'md md-delete btn btn-danger', :data => { :confirm => 'Are you sure?' }

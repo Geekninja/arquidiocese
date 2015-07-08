@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20150707203105) do
 
   create_table "cms_pages", force: :cascade do |t|
     t.string   "title"
-    t.string   "resume"
-    t.string   "content"
+    t.text     "resume"
+    t.text     "content"
     t.date     "date"
     t.boolean  "publish"
     t.string   "thumb"
@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 20150707203105) do
 
   create_table "cms_posts", force: :cascade do |t|
     t.string   "title"
-    t.string   "resume"
-    t.string   "content"
+    t.text     "resume"
+    t.text     "content"
     t.date     "date"
     t.boolean  "publish"
     t.boolean  "slider"

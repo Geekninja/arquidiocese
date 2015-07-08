@@ -1,35 +1,28 @@
-%h1 Listing cms_pages
+.card
+  .card-header.ch-alt
+    %h2
+      Páginas
+      = link_to 'Nova Página', new_cms_page_path, class: 'btn btn-success pull-right'
+      %small Listagem de páginas
+  .table-responsive{:style => "overflow: hidden; outline: none;", :tabindex => "3"}
+    %table#data-table-command.table.table-striped.table-vmiddle.bootgrid-table
+      %thead
+        %tr
+          %th #
+          %th Título
+          %th Categoria da Página
+          %th Publicado
+          %th Data
+          %th{:colspan => '3'} Ação
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th Resume
-      %th Content
-      %th Date
-      %th Publish
-      %th Thumb
-      %th Thumb active
-      %th Page category
-      %th
-      %th
-      %th
-
-  %tbody
-    - @cms_pages.each do |cms_page|
-      %tr
-        %td= cms_page.title
-        %td= cms_page.resume
-        %td= cms_page.content
-        %td= cms_page.date
-        %td= cms_page.publish
-        %td= cms_page.thumb
-        %td= cms_page.thumb_active
-        %td= cms_page.page_category
-        %td= link_to 'Show', cms_page
-        %td= link_to 'Edit', edit_cms_page_path(cms_page)
-        %td= link_to 'Destroy', cms_page, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Page', new_cms_page_path
+      %tbody
+        - @cms_pages.each_with_index do |cms_page, i|
+          %tr
+            %td= i+1
+            %td= cms_page.title
+            %td= cms_page.post_category
+            %td= status_helper (cms_page.publish)
+            %td= cms_page.created_at.strftime('%d-%m-%Y')
+            %td.col-md-2
+              = link_to '', edit_cms_page_path(cms_page), class: 'md md-edit btn btn-primary'
+              = link_to '', cms_page, :method => :delete, class: 'md md-delete btn btn-danger', :data => { :confirm => 'Are you sure?' }
