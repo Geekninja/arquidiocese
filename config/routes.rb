@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  devise_for :users
    namespace :cms, path: 'conteudo' do
      root 'pages#index'
      resources :posts, path: 'postagens'
