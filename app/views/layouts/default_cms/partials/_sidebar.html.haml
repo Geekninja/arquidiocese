@@ -18,28 +18,16 @@
           %li
             = link_to "<i class='md md-history'></i> Sair".html_safe," main_app.destroy_user_session_path", method: :delete
       %ul.main-menu
-        %li{class: ('active' if params[:module] == "intranet")}
-          = link_to "<i class='md   md-turned-in'></i> Intranet".html_safe, 'intranet.root_path'
-        %li{class: ('active' if params[:module] == "dashboard")}
-          = link_to "<i class='md  md-dashboard'></i> Dashboard".html_safe, 'dashboard.root_path'
-          %ul{style: ('display:block;' if @module == "person")}
-        %li.sub-menu{class: ('toggled active' if params[:module] == "concourse")}
-        %li.sub-menu{class: ('toggled active' if params[:module] == "cms")}
+        %li
+          = link_to "<i class='md   md-turned-in'></i> Posts".html_safe, cms_posts_path
+        %li
+          = link_to "<i class='md   md-turned-in'></i> Páginas".html_safe, cms_pages_path
         %li.sub-menu{class: ('toggled active' if params[:module] == "cms")}
           %a{:href => ""}
             %i.md.md-public>
-            Gestão Site
+            Categorias
           %ul{style: ('display:block;' if params[:module] == "cms")}
             %li
-              = link_to "postagens", "cms.posts_path"
+              = link_to "Posts", cms_post_categories_path
             %li
-              = link_to "páginas", "cms.pages_path"
-            %li.divider
-            %li
-              = link_to "categorias de post", "cms.post_categories_path"
-            %li
-              = link_to "categorias de página"," cms.page_categories_path"
-            %li
-              = link_to "menu", "cms.navs_path"
-            %li
-              = link_to "categorias de menu", "cms.nav_categories_path"
+              = link_to "Páginas", cms_page_categories_path

@@ -25,30 +25,23 @@ class Cms::PageCategoriesController < ApplicationController
   # POST /cms/page_categories.json
   def create
     @cms_page_category = Cms::PageCategory.new(cms_page_category_params)
-
-    respond_to do |format|
-      if @cms_page_category.save
-        format.html { redirect_to @cms_page_category, notice: 'Page category was successfully created.' }
-        format.json { render :show, status: :created, location: @cms_page_category }
-      else
-        format.html { render :new }
-        format.json { render json: @cms_page_category.errors, status: :unprocessable_entity }
-      end
+    if  @cms_page_category.save
+    redirect_to action: :index
+    else
+    render :new
     end
   end
 
   # PATCH/PUT /cms/page_categories/1
   # PATCH/PUT /cms/page_categories/1.json
   def update
-    respond_to do |format|
-      if @cms_page_category.update(cms_page_category_params)
-        format.html { redirect_to @cms_page_category, notice: 'Page category was successfully updated.' }
-        format.json { render :show, status: :ok, location: @cms_page_category }
-      else
-        format.html { render :edit }
-        format.json { render json: @cms_page_category.errors, status: :unprocessable_entity }
-      end
-    end
+
+  if @cms_page_category.update(cms_page_category_params)
+  redirect_to action: :index
+  else
+  render :edit
+  end
+
   end
 
   # DELETE /cms/page_categories/1

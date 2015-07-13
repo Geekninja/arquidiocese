@@ -22,32 +22,22 @@ class Cms::PostCategoriesController < ApplicationController
   end
 
   # POST /cms/post_categories
-  # POST /cms/post_categories.json
   def create
     @cms_post_category = Cms::PostCategory.new(cms_post_category_params)
-
-    respond_to do |format|
-      if @cms_post_category.save
-        format.html { redirect_to @cms_post_category, notice: 'Post category was successfully created.' }
-        format.json { render :show, status: :created, location: @cms_post_category }
-      else
-        format.html { render :new }
-        format.json { render json: @cms_post_category.errors, status: :unprocessable_entity }
-      end
+    if @cms_post_category.save
+      redirect_to action: :index
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /cms/post_categories/1
   # PATCH/PUT /cms/post_categories/1.json
   def update
-    respond_to do |format|
-      if @cms_post_category.update(cms_post_category_params)
-        format.html { redirect_to @cms_post_category, notice: 'Post category was successfully updated.' }
-        format.json { render :show, status: :ok, location: @cms_post_category }
-      else
-        format.html { render :edit }
-        format.json { render json: @cms_post_category.errors, status: :unprocessable_entity }
-      end
+    if @cms_post_category.update(cms_post_category_params)
+      redirect_to action: :index
+    else
+      render :edit
     end
   end
 
