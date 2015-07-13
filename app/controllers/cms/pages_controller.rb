@@ -22,32 +22,21 @@ class Cms::PagesController < ApplicationController
   end
 
   # POST /cms/pages
-  # POST /cms/pages.json
   def create
     @cms_page = Cms::Page.new(cms_page_params)
-
-    respond_to do |format|
       if @cms_page.save
-        format.html { redirect_to @cms_page, notice: 'Page was successfully created.' }
-        format.json { render :show, status: :created, location: @cms_page }
+        redirect_to action: 'index'
       else
-        format.html { render :new }
-        format.json { render json: @cms_page.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
   end
 
   # PATCH/PUT /cms/pages/1
-  # PATCH/PUT /cms/pages/1.json
   def update
-    respond_to do |format|
-      if @cms_page.update(cms_page_params)
-        format.html { redirect_to @cms_page, notice: 'Page was successfully updated.' }
-        format.json { render :show, status: :ok, location: @cms_page }
-      else
-        format.html { render :edit }
-        format.json { render json: @cms_page.errors, status: :unprocessable_entity }
-      end
+    if @cms_page.update(cms_page_params)
+      redirect_to action: :index
+    else
+      render :edit
     end
   end
 
@@ -69,6 +58,6 @@ class Cms::PagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cms_page_params
-      params.require(:cms_page).permit(:title, :resume, :content, :date, :publish, :thumb, :thumb_active, :page_category_id)
+      params.require(:cms_page).permit(:title, :resume, :content, :publish, :thumb, :thumb_active, :page_category_id)
     end
 end

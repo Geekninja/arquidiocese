@@ -1,5 +1,5 @@
 # encoding: utf-8
-class Cms::ThumbUploader < CarrierWave::Uploader::Base
+class Cms::ThumbnailUploader < CarrierWave::Uploader::Base
   storage :file
   def store_dir
     "image"

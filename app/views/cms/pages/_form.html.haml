@@ -38,10 +38,6 @@
         = f.label :resume, class: 'fg-label'
         = f.input :resume, label: false, input_html: { class: 'redactor' }
     .row
-      .col-md-3
-        = f.label :date, as: 'string', class: 'fg-label'
-        = f.input :date, as: 'string', label: false, input_html: { class: 'date', placeholder: '00/00/0000', value: (@cms_page.date) ? localize(f.object.date) : nil}
-    .row
       .col-md-12
         = f.button :submit, class: 'btn btn-success'
         = link_to 'Back', cms_pages_path , class: 'btn btn-danger'

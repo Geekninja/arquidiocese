@@ -20,7 +20,7 @@
           %tr
             %td= i+1
             %td= cms_page.title
-            %td= cms_page.post_category
+            %td= cms_page.page_category.present?  
             %td= status_helper (cms_page.publish)
             %td= cms_page.created_at.strftime('%d-%m-%Y')
             %td.col-md-2

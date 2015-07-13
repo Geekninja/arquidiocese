@@ -18,13 +18,17 @@
         %br
         %br
         = f.input :thumb, as: 'file', label: false, input_html: { placeholder: 'Selecione' }
-
+        = image_tag @cms_post.thumb, width: '200' if @cms_post.thumb?
+        %br
+        %br
       .col-md-3
         = f.label "Imagem Interna", as: 'file', class: 'fg-label'
         %br
         %br
         = f.input :thumbnail, as: 'file', label: false, input_html: { placeholder: 'Selecione' }
-
+        = image_tag @cms_post.thumbnail, width: '200' if @cms_post.thumbnail?
+        %br
+        %br
       .col-md-2
         .toggle-switch{"data-ts-color" => "blue"}
           %label.ts-label{:for => "ts4"} Slider
@@ -50,10 +54,6 @@
       .col-md-12
         = f.label :resume, class: 'fg-label'
         = f.input :resume, label: false, input_html: { class: 'redactor' }
-    .row
-      .col-md-3
-        = f.label :date, as: 'string', class: 'fg-label'
-        = f.input :date, as: 'string', label: false, input_html: { class: 'date', placeholder: '00/00/0000', value: (@cms_post.date) ? localize(f.object.date) : nil}
     .row
       .col-md-12
         = f.button :submit, class: 'btn btn-success'

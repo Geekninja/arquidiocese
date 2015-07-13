@@ -4,11 +4,12 @@ class CreateCmsPosts < ActiveRecord::Migration
       t.string :title
       t.text :resume
       t.text :content
-      t.date :date
       t.boolean :publish
       t.boolean :slider
       t.string :thumb
       t.boolean :thumb_active
+      t.string :thumbnail
+      t.boolean :thumbnail_active
       t.references :post_category, index: true, foreign_key: true
 
       t.timestamps null: false

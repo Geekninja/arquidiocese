@@ -4,7 +4,6 @@ class CreateCmsPages < ActiveRecord::Migration
       t.string :title
       t.text :resume
       t.text :content
-      t.date :date
       t.boolean :publish
       t.string :thumb
       t.boolean :thumb_active
