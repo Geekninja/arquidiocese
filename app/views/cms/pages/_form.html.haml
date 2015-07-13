@@ -18,7 +18,10 @@
         %br
         %br
         = f.input :thumbnail, as: 'file', label: false, input_html: { placeholder: 'Selecione' }
-
+        = image_tag @cms_page.thumbnail, width: '200' if @cms_page.thumbnail?
+        %br
+        %br
+        	
       .col-md-2
         .toggle-switch{"data-ts-color" => "blue"}
           %label.ts-label{:for => "ts5"} Publicado

@@ -58,6 +58,6 @@ class Cms::PagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cms_page_params
-      params.require(:cms_page).permit(:title, :resume, :content, :publish, :thumb, :thumb_active, :page_category_id)
+      params.require(:cms_page).permit(:title, :resume, :content, :publish, :thumbnail, :thumbnail_active, :page_category_id)
     end
 end

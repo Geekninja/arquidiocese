@@ -5,8 +5,8 @@ class CreateCmsPages < ActiveRecord::Migration
       t.text :resume
       t.text :content
       t.boolean :publish
-      t.string :thumb
-      t.boolean :thumb_active
+      t.string :thumbnail
+      t.boolean :thumbnail_active
       t.references :page_category, index: true, foreign_key: true
 
       t.timestamps null: false

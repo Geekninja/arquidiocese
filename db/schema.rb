@@ -25,10 +25,9 @@ ActiveRecord::Schema.define(version: 20150707203105) do
     t.string   "title"
     t.text     "resume"
     t.text     "content"
-    t.date     "date"
     t.boolean  "publish"
-    t.string   "thumb"
-    t.boolean  "thumb_active"
+    t.string   "thumbnail"
+    t.boolean  "thumbnail_active"
     t.integer  "page_category_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -48,7 +47,6 @@ ActiveRecord::Schema.define(version: 20150707203105) do
     t.string   "title"
     t.text     "resume"
     t.text     "content"
-    t.date     "date"
     t.boolean  "publish"
     t.boolean  "slider"
     t.string   "thumb"
