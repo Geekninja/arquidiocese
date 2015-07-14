@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_layout
-    "default_#{@namespace}/#{@namespace}"
+    "default_#{@namespace}/#{@namespace}" if @namespace != "devise"
   end
 
   def set_namespace

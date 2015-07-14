@@ -1,4 +1,5 @@
 class Cms::PageCategoriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_cms_page_category, only: [:show, :edit, :update, :destroy]
 
   # GET /cms/page_categories

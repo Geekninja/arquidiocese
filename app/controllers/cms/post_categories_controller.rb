@@ -1,4 +1,5 @@
 class Cms::PostCategoriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_cms_post_category, only: [:show, :edit, :update, :destroy]
 
   # GET /cms/post_categories

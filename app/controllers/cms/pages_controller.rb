@@ -1,4 +1,5 @@
 class Cms::PagesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_cms_page, only: [:show, :edit, :update, :destroy]
 
   # GET /cms/pages

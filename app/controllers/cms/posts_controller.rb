@@ -1,4 +1,5 @@
 class Cms::PostsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_cms_post, only: [:show, :edit, :update, :destroy]
 
   # GET /cms/posts
