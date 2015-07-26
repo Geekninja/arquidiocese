@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   devise_for :users
-   namespace :cms, path: 'conteudo' do
+   namespace :cms do
      root 'pages#index'
      resources :posts, path: 'postagens'
      resources :post_categories, path: 'postagem_categorias'
@@ -15,5 +15,10 @@ Rails.application.routes.draw do
 
     namespace :content, path: '/' do
       root 'home#index'
+
+      resources :posts
+      resources :post_categories
+      resources :pages
+      resources :page_categories
     end
 end

@@ -6,4 +6,27 @@ module ApplicationHelper
       "<span class='label label-default'>Inativo</span>".html_safe
     end
   end
+
+def primary_slider
+end
+
+def post_each(type,limit = 10, order = 'ASC')
+  @post= Cms::Post.where(publish: true).limit(limit).order("created_at #{order}")
+
+  @post.each do |p|
+    yield p
+  end
+end
+
+def second_slider
+
+end
+
+def parish
+
+end
+
+
+
+
 end
