@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @cms_parish.name
+%p
+  %b Phone:
+  = @cms_parish.phone
+%p
+  %b Address:
+  = @cms_parish.address
+%p
+  %b Priest:
+  = @cms_parish.priest
+%p
+  %b Content:
+  = @cms_parish.content
+%p
+  %b Publish:
+  = @cms_parish.publish
+%p
+  %b Thumb:
+  = @cms_parish.thumb
+%p
+  %b Thumbnail:
+  = @cms_parish.thumbnail
+%p
+  %b Thumbnail active:
+  = @cms_parish.thumbnail_active
+%p
+  %b Resume:
+  = @cms_parish.resume
+
+= link_to 'Edit', edit_cms_parish_path(@cms_parish)
+\|
+= link_to 'Back', cms_parishes_path

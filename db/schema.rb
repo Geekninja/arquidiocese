@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713193732) do
+ActiveRecord::Schema.define(version: 20150726222743) do
 
   create_table "cms_page_categories", force: :cascade do |t|
     t.string   "name"
@@ -35,6 +35,21 @@ ActiveRecord::Schema.define(version: 20150713193732) do
 
   add_index "cms_pages", ["page_category_id"], name: "index_cms_pages_on_page_category_id"
 
+  create_table "cms_parishes", force: :cascade do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "priest"
+    t.text     "content"
+    t.boolean  "publish"
+    t.string   "thumb"
+    t.string   "thumbnail"
+    t.boolean  "thumbnail_active"
+    t.text     "resume"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
   create_table "cms_post_categories", force: :cascade do |t|
     t.string   "name"
     t.boolean  "status"
@@ -54,8 +69,11 @@ ActiveRecord::Schema.define(version: 20150713193732) do
     t.string   "thumbnail"
     t.boolean  "thumbnail_active"
     t.integer  "post_category_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.string   "thumb_primary_text"
+    t.string   "thumb_second_text"
+    t.string   "thumb_third_text"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   add_index "cms_posts", ["post_category_id"], name: "index_cms_posts_on_post_category_id"

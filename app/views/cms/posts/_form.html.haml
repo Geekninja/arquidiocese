@@ -51,6 +51,16 @@
           = f.check_box :thumb_active, id: 'ts6',hidden: 'hidden', type: 'checkbox'
           %label.ts-helper{:for => "ts6"}
     .row
+      .col-md-4
+        = f.label :thumb_primary_text, class: 'fg-label'
+        = f.input :thumb_primary_text, label: false, input_html: { placeholder: 'Digite um titulo' }
+      .col-md-4
+        = f.label :thumb_second_text, class: 'fg-label'
+        = f.input :thumb_second_text, label: false, input_html: { placeholder: 'Digite um titulo' }
+      .col-md-4
+        = f.label :thumb_third_text, class: 'fg-label'
+        = f.input :thumb_third_text, label: false, input_html: { placeholder: 'Digite um titulo' }
+    .row
       .col-md-12
         = f.label :resume, class: 'fg-label'
         = f.input :resume, label: false, input_html: { class: 'redactor' }

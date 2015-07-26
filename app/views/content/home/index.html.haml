@@ -8,7 +8,7 @@
       %strong.f-primary-b Igreja
     %p.b-desc-section.f-desc-section.f-secondary-l.f-small Reprehendunt in, quo ea esse civibus suavitate. Pro gubergren persecuti moderatius, id laudem vix, an eos. Adversarium principes.
     .b-some-examples.f-some-examples.b-some-examples-secondary.f-some-examples-secondary.f-secondary.row
-      - post_each(3) do |p|
+      - post_each('teste',3) do |p|
         .col-sm-4.col-xs-12
           / b-btn.f-btn.b-btn-light.f-btn-light.info
           .b-some-examples__item.b-bg-transparent.f-some-examples__item
@@ -30,102 +30,11 @@
               = link_to content_post_path(p), :class => 'f-primary-b f-more' do
                 %i.fa.fa-arrow-circle-right
                   Leia Mais
-%section.b-infoblock--small
-  .container
-    .row.b-col-default-indent
-      .col-md-8.col-md-offset-2
-        %h2.f-primary-l.f-center.c-default Nosso preço
-        %p.f-primary-l.f-center Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat nunc at augue tincidunt vehicula. Donec viverra semper arcu ut blandit. Suspendisse ac tempus diam. Duis dignissim lacinia sapien in tempor.
-    .b-shortcode-example.b-null-bottom-indent
-      .b-pricing-info__container.f-center
-        .b-pricing-info__item.f-pricing-info__item.col-sm-6.col-md-3.col-xs-12
-          .b-pricing-info__item-row.b-pricing-info__item-title
-            %h4.f-primary-b Básico
-          .b-pricing-info__item-row.b-pricing-info__item-price
-            %h2.f-primary-b Gratuito
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row
-            %p Lorem Ipsumt
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row.b-pricing-info__item-btn-row
-            %a.b-btn.f-btn.b-btn-sm.f-primary-b Assinar
-        .b-pricing-info__item.f-pricing-info__item.col-sm-6.col-md-3.col-xs-12
-          .b-pricing-info__item-row.b-pricing-info__item-title
-            %h4.f-primary-b Plano Prata
-          .b-pricing-info__item-row.b-pricing-info__item-price
-            %h2.f-primary-b
-              R$ 2 /
-              %small.f-primary mês
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row
-            %p Lorem Ipsumt
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row.b-pricing-info__item-btn-row
-            %a.b-btn.f-btn.b-btn-sm.f-primary-b Assinar
-        .clearfix.visible-sm-block
-        .b-pricing-info__item.f-pricing-info__item.col-sm-6.col-md-3.col-xs-12
-          .b-pricing-info__item-row.b-pricing-info__item-title
-            %h4.f-primary-b Plano Ouro
-          .b-pricing-info__item-row.b-pricing-info__item-price
-            %h2.f-primary-b
-              R$10 /
-              %small.f-primary mês
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row
-            %p Lorem Ipsumt
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row.b-pricing-info__item-btn-row
-            %a.b-btn.f-btn.b-btn-sm.f-primary-b Assinar
-        .b-pricing-info__item.f-pricing-info__item.col-sm-6.col-md-3.col-xs-12
-          .b-pricing-info__item-row.b-pricing-info__item-title
-            %h4.f-primary-b Plano Diamante
-          .b-pricing-info__item-row.b-pricing-info__item-price
-            %h2.f-primary-b
-              R$39 /
-              %small.f-primary mês
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row
-            %p Lorem Ipsumt
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row
-            %p Lorem Ipsum
-          .b-pricing-info__item-row.b-pricing-info__item-btn-row
-            %a.b-btn.f-btn.b-btn-sm.f-primary-b Assinar
 %section.b-infoblock.b-desc-section-container
   .container
     %h2.f-center.f-primary-l
       Nossas
-      %strong.f-primary-b Notícias
+      %strong.f-primary-b Paróquias
     %p.b-infoblock-description.f-desc-section.f-center.f-employee__desc.f-small.f-primary-l Reprehendunt in, quo ea esse civibus suavitate. Pro gubergren persecuti moderatius, id laudem vix, an eos. Adversarium principes.
     .b-carousel-primary
       .j-carousel-primary

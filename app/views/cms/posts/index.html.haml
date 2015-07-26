@@ -20,7 +20,7 @@
           %tr
             %td= i+1
             %td= cms_post.title
-            %td= cms_post.post_category.name
+            %td= cms_post.post_category.name if cms_post.post_category.present?
             %td= status_helper (cms_post.publish)
             %td= cms_post.created_at.strftime('%d-%m-%Y')
             %td.col-md-2

@@ -56,6 +56,6 @@ class Cms::PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cms_post_params
-      params.require(:cms_post).permit(:title, :resume, :content, :publish, :slider, :thumb, :thumb_active, :thumbnail, :thumbnail_active, :post_category_id)
+      params.require(:cms_post).permit(:title, :resume, :content, :publish, :slider, :thumb, :thumb_active, :thumbnail, :thumbnail_active, :post_category_id,:thumb_primary_text, :thumb_second_text, :thumb_third_text)
     end
 end

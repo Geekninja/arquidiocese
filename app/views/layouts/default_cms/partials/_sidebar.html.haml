@@ -5,7 +5,7 @@
         %a{:href => ""}
           .profile-pic
             .lv-avatar.bgm-blue{"style": 'margin-bottom: 20px'}
-              João
+              J
           .profile-info
             %b
               João
@@ -22,6 +22,8 @@
           = link_to "<i class='md   md-turned-in'></i> Posts".html_safe, cms_posts_path
         %li
           = link_to "<i class='md   md-turned-in'></i> Páginas".html_safe, cms_pages_path
+        %li
+          = link_to "<i class='md   md-turned-in'></i> Paróquias".html_safe, cms_parishes_path
         %li.sub-menu{class: ('toggled active' if params[:module] == "cms")}
           %a{:href => ""}
             %i.md.md-public>

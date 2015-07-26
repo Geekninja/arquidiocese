@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
 
+  namespace :cms do
+    resources :parishes
+  end
   devise_for :users
    namespace :cms do
      root 'pages#index'

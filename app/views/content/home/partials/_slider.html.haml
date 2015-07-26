@@ -3,15 +3,22 @@
   .b-slidercontainer.b-slider
     .j-fullscreenslider.j-arr-hide
       %ul
-        %li{"data-slotamount" => "10", "data-transition" => "fade"}
-          .tp-bannertimer
-          %img{"data-retina" => "", :src => "img/slider/section-bg-3.jpg"}/
-          .caption.lft.caption-left{"data-hoffset" => "60", "data-speed" => "700", "data-start" => "2000", "data-x" => "left", "data-y" => "150"}
-            .b-slider-lg-info-l__item-title.f-slider-lg-info-l__item-title.b-slider-lg-info-l__item-title-tertiary
-              %h2.f-primary-l EDUARDO LUIZ SANTOS CABETTE
-              %h1.f-primary-b Breves anotações atécnicas à nota "atécnica" 7ª
-          .caption.lfl.caption-left{"data-speed" => "1000", "data-start" => "2600", "data-x" => "left", "data-y" => "270"}
-            .b-slider-lg-info-l__item-link.f-slider-lg-info-l__item-link
-              %a.b-slider-lg-info-l__item-anchor.f-slider-lg-info-l__item-anchor.f-primary-b{:href => "#"} Colunista da Semana
-              %span.b-slider-lg-info-l__item-link-after
-                %i.fa.fa-chevron-right
+        -primary_slider do |s|
+          %li{"data-slotamount" => "10", "data-transition" => "fade"}
+            .tp-bannertimer
+            -if s.thumb?
+              = image_tag s.thumb
+            -else
+              %img{"data-retina" => "", :src => "img/slider/section-bg-3.jpg"}/
+            .caption.lft.caption-left{"data-hoffset" => "60", "data-speed" => "700", "data-start" => "2000", "data-x" => "left", "data-y" => "150"}
+              .b-slider-lg-info-l__item-title.f-slider-lg-info-l__item-title.b-slider-lg-info-l__item-title-tertiary
+                %h2.f-primary-l
+                  = s.thumb_primary_text
+                %h1.f-primary-b
+                  = s.thumb_second_text
+            .caption.lfl.caption-left{"data-speed" => "1000", "data-start" => "2600", "data-x" => "left", "data-y" => "270"}
+              .b-slider-lg-info-l__item-link.f-slider-lg-info-l__item-link
+                = link_to content_post_path(s), :class => 'b-slider-lg-info-l__item-anchor f-slider-lg-info-l__item-anchor f-primary-b' do
+                  = s.thumb_third_text
+                %span.b-slider-lg-info-l__item-link-after
+                  %i.fa.fa-chevron-right

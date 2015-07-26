@@ -1,0 +1,17 @@
+= simple_form_for(@cms_parish) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :phone
+    = f.input :address
+    = f.input :priest
+    = f.input :content
+    = f.input :publish
+    = f.input :thumb
+    = f.input :thumbnail
+    = f.input :thumbnail_active
+    = f.input :resume
+
+  .form-actions
+    = f.button :submit
