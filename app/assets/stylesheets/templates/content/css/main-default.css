@@ -6679,9 +6679,9 @@ body .b-slider--thumb-visible .tp-bullets {
   overflow: hidden;
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
-  white-space: nowrap; }
+/*white-space: nowrap;*/ }
   .f-some-examples__item_name a {
-    font-size: 1.38462em;
+    font-size: 1.2em;
     line-height: 1;
     color: #666666; }
     .f-some-examples__item_name a:hover {

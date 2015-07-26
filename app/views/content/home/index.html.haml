@@ -4,16 +4,19 @@
 %section.b-infoblock.f-center.b-diagonal-line-bg-light
   .container
     %h2.f-primary-l
-      we are
-      %strong.f-primary-b frexy studio
+      Acontece na
+      %strong.f-primary-b Igreja
     %p.b-desc-section.f-desc-section.f-secondary-l.f-small Reprehendunt in, quo ea esse civibus suavitate. Pro gubergren persecuti moderatius, id laudem vix, an eos. Adversarium principes.
     .b-some-examples.f-some-examples.b-some-examples-secondary.f-some-examples-secondary.f-secondary.row
-      - post_each('teste',3) do |p|
+      - post_each(3) do |p|
         .col-sm-4.col-xs-12
           / b-btn.f-btn.b-btn-light.f-btn-light.info
           .b-some-examples__item.b-bg-transparent.f-some-examples__item
             .b-some-examples__item_img.view.view-sixth
-              %img.j-data-element{:alt => "", "data-animate" => "fadeInDown", "data-retina" => "", :src => "img/homepage/example_4.jpg"}/
+              - if p.thumb?
+                = image_tag p.thumb, height:'194', width:'370'
+              - else
+                %img.j-data-element{:alt => "", "data-animate" => "fadeInDown", "data-retina" => "", :src => "img/homepage/example_4.jpg"}/
               .b-item-hover-action.f-center.mask
                 .b-item-hover-action__inner
                   .b-item-hover-action__inner-btn_group
@@ -21,380 +24,295 @@
                       %i.fa.fa-link
             .b-some-examples__item_info
               .b-some-examples__item_info_level.b-some-examples__item_name.f-some-examples__item_name.f-primary-b
-                %a{:href => "#"} who we are?
+                = link_to "#{p.title}", content_post_path(p)
               .b-some-examples__item_info_level.b-some-examples__item_description.f-some-examples__item_description
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas diam sapien, auctor sed blandit nec, adipiscing eget elit.
-              %a.f-primary-b.f-more{:href => "blog_detail_right_slidebar.html"}
+                = p.resume.html_safe
+              = link_to content_post_path(p), :class => 'f-primary-b f-more' do
                 %i.fa.fa-arrow-circle-right
-                Read more
-    %section
-      .container
-        .b-carousel-secondary.f-carousel-secondary.b-some-examples-tertiary.f-some-examples-tertiary.b-carousel-reset
-          .b-carousel-title.f-carousel-title.f-primary-b Colunistas
-          .b-some-examples.f-some-examples.j-carousel-secondary
-            .col-md-3.col-sm-4.col-xs-12
-              .b-employee-item.b-employee-item--color.f-employee-item
-                .view.view-sixth
-                  %a{:href => "#"}
-                    %img{:alt => "", "data-retina" => "", :src => "img/users/user1.jpg"}/
-                  .b-item-hover-action.f-center.mask
-                    .b-item-hover-action__inner
-                      .b-item-hover-action__inner-btn_group
-                        %a.b-btn.f-btn.b-btn-light.f-btn-light.info{:href => "about_us_meet_our_team_detail.html"}
-                          %i.fa.fa-link
-                %h4.f-primary-b Lorem Ipsum
-                .b-employee-item__position.f-employee-item__position Lorem Ipsum
-                %p Consetetur sadipscing elitrd diam nonumy eirmod tempor invidunt ut labore.
-                .b-employee-item__social
-                  %a.b-employee-item__social_btn{:href => "#"}
-                    %i.fa.fa-twitter
-                  %a.b-employee-item__social_btn{:href => "#"}
-                    %i.fa.fa-google-plus
-                  %a.b-employee-item__social_btn{:href => "#"}
-                    %i.fa.fa-thumbs-up
-            .col-md-3.col-sm-4.col-xs-12
-              .b-employee-item.b-employee-item--color.f-employee-item
-                .view.view-sixth
-                  %a{:href => "#"}
-                    %img{:alt => "", "data-retina" => "", :src => "img/users/user2.jpg"}/
-                  .b-item-hover-action.f-center.mask
-                    .b-item-hover-action__inner
-                      .b-item-hover-action__inner-btn_group
-                        %a.b-btn.f-btn.b-btn-light.f-btn-light.info{:href => "about_us_meet_our_team_detail.html"}
-                          %i.fa.fa-link
-                %h4.f-primary-b Lorem Ipsum
-                .b-employee-item__position.f-employee-item__position Lorem Ipsum
-                %p Consetetur sadipscing elitrd diam nonumy eirmod tempor invidunt ut labore.
-                .b-employee-item__social
-                  %a.b-employee-item__social_btn{:href => "#"}
-                    %i.fa.fa-twitter
-                  %a.b-employee-item__social_btn{:href => "#"}
-                    %i.fa.fa-google-plus
-                  %a.b-employee-item__social_btn{:href => "#"}
-                    %i.fa.fa-thumbs-up
-            .col-md-3.col-sm-4.col-xs-12
-              .b-employee-item.b-employee-item--color.f-employee-item
-                .view.view-sixth
-                  %a{:href => "#"}
-                    %img{:alt => "", "data-retina" => "", :src => "img/users/user3.jpg"}/
-                  .b-item-hover-action.f-center.mask
-                    .b-item-hover-action__inner
-                      .b-item-hover-action__inner-btn_group
-                        %a.b-btn.f-btn.b-btn-light.f-btn-light.info{:href => "about_us_meet_our_team_detail.html"}
-                          %i.fa.fa-link
-                %h4.f-primary-b Lorem Ipsum
-                .b-employee-item__position.f-employee-item__position Lorem Ipsum
-                %p Consetetur sadipscing elitrd diam nonumy eirmod tempor invidunt ut labore.
-                .b-employee-item__social
-                  %a.b-employee-item__social_btn{:href => "#"}
-                    %i.fa.fa-twitter
-                  %a.b-employee-item__social_btn{:href => "#"}
-                    %i.fa.fa-google-plus
-                  %a.b-employee-item__social_btn{:href => "#"}
-                    %i.fa.fa-thumbs-up
-            .col-md-3.col-sm-4.col-xs-12.hidden-xs.hidden-sm
-              .b-employee-item.b-employee-item--color.f-employee-item
-                .view.view-sixth
-                  %a{:href => "#"}
-                    %img{:alt => "", "data-retina" => "", :src => "img/users/user4.jpg"}/
-                  .b-item-hover-action.f-center.mask
-                    .b-item-hover-action__inner
-                      .b-item-hover-action__inner-btn_group
-                        %a.b-btn.f-btn.b-btn-light.f-btn-light.info{:href => "about_us_meet_our_team_detail.html"}
-                          %i.fa.fa-link
-                %h4.f-primary-b Lorem Ipsum
-                .b-employee-item__position.f-employee-item__position Lorem Ipsum
-                %p Consetetur sadipscing elitrd diam nonumy eirmod tempor invidunt ut labore.
-                .b-employee-item__social
-                  %a.b-employee-item__social_btn{:href => "#"}
-                    %i.fa.fa-twitter
-                  %a.b-employee-item__social_btn{:href => "#"}
-                    %i.fa.fa-google-plus
-                  %a.b-employee-item__social_btn{:href => "#"}
-                    %i.fa.fa-thumbs-up
-  %section.b-infoblock--small
-    .container
-      .row.b-col-default-indent
-        .col-md-8.col-md-offset-2
-          %h2.f-primary-l.f-center.c-default Nosso preço
-          %p.f-primary-l.f-center Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat nunc at augue tincidunt vehicula. Donec viverra semper arcu ut blandit. Suspendisse ac tempus diam. Duis dignissim lacinia sapien in tempor.
-      .b-shortcode-example.b-null-bottom-indent
-        .b-pricing-info__container.f-center
-          .b-pricing-info__item.f-pricing-info__item.col-sm-6.col-md-3.col-xs-12
-            .b-pricing-info__item-row.b-pricing-info__item-title
-              %h4.f-primary-b Básico
-            .b-pricing-info__item-row.b-pricing-info__item-price
-              %h2.f-primary-b Gratuito
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row
-              %p Lorem Ipsumt
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row.b-pricing-info__item-btn-row
-              %a.b-btn.f-btn.b-btn-sm.f-primary-b Assinar
-          .b-pricing-info__item.f-pricing-info__item.col-sm-6.col-md-3.col-xs-12
-            .b-pricing-info__item-row.b-pricing-info__item-title
-              %h4.f-primary-b Plano Prata
-            .b-pricing-info__item-row.b-pricing-info__item-price
-              %h2.f-primary-b
-                R$ 2 /
-                %small.f-primary mês
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row
-              %p Lorem Ipsumt
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row.b-pricing-info__item-btn-row
-              %a.b-btn.f-btn.b-btn-sm.f-primary-b Assinar
-          .clearfix.visible-sm-block
-          .b-pricing-info__item.f-pricing-info__item.col-sm-6.col-md-3.col-xs-12
-            .b-pricing-info__item-row.b-pricing-info__item-title
-              %h4.f-primary-b Plano Ouro
-            .b-pricing-info__item-row.b-pricing-info__item-price
-              %h2.f-primary-b
-                R$10 /
-                %small.f-primary mês
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row
-              %p Lorem Ipsumt
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row.b-pricing-info__item-btn-row
-              %a.b-btn.f-btn.b-btn-sm.f-primary-b Assinar
-          .b-pricing-info__item.f-pricing-info__item.col-sm-6.col-md-3.col-xs-12
-            .b-pricing-info__item-row.b-pricing-info__item-title
-              %h4.f-primary-b Plano Diamante
-            .b-pricing-info__item-row.b-pricing-info__item-price
-              %h2.f-primary-b
-                R$39 /
-                %small.f-primary mês
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row
-              %p Lorem Ipsumt
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row
-              %p Lorem Ipsum
-            .b-pricing-info__item-row.b-pricing-info__item-btn-row
-              %a.b-btn.f-btn.b-btn-sm.f-primary-b Assinar
-  %section.b-infoblock.b-desc-section-container
-    .container
-      %h2.f-center.f-primary-l
-        Nossas
-        %strong.f-primary-b Notícias
-      %p.b-infoblock-description.f-desc-section.f-center.f-employee__desc.f-small.f-primary-l Reprehendunt in, quo ea esse civibus suavitate. Pro gubergren persecuti moderatius, id laudem vix, an eos. Adversarium principes.
-      .b-carousel-primary
-        .j-carousel-primary
-          .b-carousel-primary__item
-            .b-news-item.f-news-item
-              .hidden-xs.b-news-item__img.view.view-sixth
-                %img{:alt => "", "data-retina" => "", :src => "img/homepage/news_1.png"}/
-                .b-item-hover-action.f-center.mask
-                  .b-item-hover-action__inner
-                    .b-item-hover-action__inner-btn_group
-                      %a.b-btn.f-btn.b-btn-light.f-btn-light.info{:href => "#"}
-                        %i.fa.fa-link
-              .b-news-item__info
-                .b-news-item__info_title.f-news-item__info_title.f-primary-b Vestibulum accumsan
-                .b-news-item__info_additional
-                  %span.f-news-item__info_additional_item.b-news-item__info_additional_item
-                    %i.fa.fa-calendar-o
-                    22 de Janeiro
-                  %span.f-news-item__info_additional_item.b-news-item__info_additional_item
-                    %i.fa.fa-comments
-                    2 comentários
-                .b-news-item__info_text.f-news-item__info_text
-                  Vestibulum accumsan habitasse dictum id ut Curabitur amet libero mauris condimentum. Ut in lobortis
-                  nulla sed augueuisque aenean
-                %a.f-news-item__info_more.f-more.f-secondary-b{:href => "#"}
                   Leia Mais
-                  %i.fa.fa-chevron-circle-right
-          .b-carousel-primary__item
-            .b-news-item.f-news-item
-              .hidden-xs.b-news-item__img.view.view-sixth
-                %img{:alt => "", "data-retina" => "", :src => "img/homepage/news_1.png"}/
-                .b-item-hover-action.f-center.mask
-                  .b-item-hover-action__inner
-                    .b-item-hover-action__inner-btn_group
-                      %a.b-btn.f-btn.b-btn-light.f-btn-light.info{:href => "#"}
-                        %i.fa.fa-link
-              .b-news-item__info
-                .b-news-item__info_title.f-news-item__info_title.f-primary-b Vestibulum accumsan
-                .b-news-item__info_additional
-                  %span.f-news-item__info_additional_item.b-news-item__info_additional_item
-                    %i.fa.fa-calendar-o
-                    22 de Janeiro
-                  %span.f-news-item__info_additional_item.b-news-item__info_additional_item
-                    %i.fa.fa-comments
-                    2 comentários
-                .b-news-item__info_text.f-news-item__info_text
-                  Vestibulum accumsan habitasse dictum id ut Curabitur amet libero mauris condimentum. Ut in lobortis
-                  nulla sed augueuisque aenean
-                %a.f-news-item__info_more.f-more.f-secondary-b{:href => "#"}
-                  Leia Mais
-                  %i.fa.fa-chevron-circle-right
-          .b-carousel-primary__item
-            .b-news-item.f-news-item
-              .hidden-xs.b-news-item__img.view.view-sixth
-                %img{:alt => "", "data-retina" => "", :src => "img/homepage/news_1.png"}/
-                .b-item-hover-action.f-center.mask
-                  .b-item-hover-action__inner
-                    .b-item-hover-action__inner-btn_group
-                      %a.b-btn.f-btn.b-btn-light.f-btn-light.info{:href => "#"}
-                        %i.fa.fa-link
-              .b-news-item__info
-                .b-news-item__info_title.f-news-item__info_title.f-primary-b Vestibulum accumsan
-                .b-news-item__info_additional
-                  %span.f-news-item__info_additional_item.b-news-item__info_additional_item
-                    %i.fa.fa-calendar-o
-                    22 de Janeiro
-                  %span.f-news-item__info_additional_item.b-news-item__info_additional_item
-                    %i.fa.fa-comments
-                    2 comentários
-                .b-news-item__info_text.f-news-item__info_text
-                  Vestibulum accumsan habitasse dictum id ut Curabitur amet libero mauris condimentum. Ut in lobortis
-                  nulla sed augueuisque aenean
-                %a.f-news-item__info_more.f-more.f-secondary-b{:href => "#"}
-                  Leia Mais
-                  %i.fa.fa-chevron-circle-right
-          .b-carousel-primary__item
-            .b-news-item.f-news-item
-              .hidden-xs.b-news-item__img.view.view-sixth
-                %img{:alt => "", "data-retina" => "", :src => "img/homepage/news_2.png"}/
-                .b-item-hover-action.f-center.mask
-                  .b-item-hover-action__inner
-                    .b-item-hover-action__inner-btn_group
-                      %a.b-btn.f-btn.b-btn-light.f-btn-light.info{:href => "#"}
-                        %i.fa.fa-link
-              .b-news-item__info
-                .b-news-item__info_title.f-news-item__info_title.f-primary-b Vestibulum accumsan
-                .b-news-item__info_additional
-                  %span.f-news-item__info_additional_item.b-news-item__info_additional_item
-                    %i.fa.fa-calendar-o
-                    22 de Janeiro
-                  %span.f-news-item__info_additional_item.b-news-item__info_additional_item
-                    %i.fa.fa-comments
-                    2 comentários
-                .b-news-item__info_text.f-news-item__info_text
-                  Vestibulum accumsan habitasse dictum id ut Curabitur amet libero mauris condimentum. Ut in lobortis
-                  nulla sed augueuisque aenean
-                %a.f-news-item__info_more.f-more.f-secondary-b{:href => "#"}
-                  Leia Mais
-                  %i.fa.fa-chevron-circle-right
-          .b-carousel-primary__item
-            .b-news-item.f-news-item
-              .hidden-xs.b-news-item__img.view.view-sixth
-                %img{:alt => "", "data-retina" => "", :src => "img/homepage/news_1.png"}/
-                .b-item-hover-action.f-center.mask
-                  .b-item-hover-action__inner
-                    .b-item-hover-action__inner-btn_group
-                      %a.b-btn.f-btn.b-btn-light.f-btn-light.info{:href => "#"}
-                        %i.fa.fa-link
-              .b-news-item__info
-                .b-news-item__info_title.f-news-item__info_title.f-primary-b Vestibulum accumsan
-                .b-news-item__info_additional
-                  %span.f-news-item__info_additional_item.b-news-item__info_additional_item
-                    %i.fa.fa-calendar-o
-                    22 de Janeiro
-                  %span.f-news-item__info_additional_item.b-news-item__info_additional_item
-                    %i.fa.fa-comments
-                    2 comentários
-                .b-news-item__info_text.f-news-item__info_text
-                  Vestibulum accumsan habitasse dictum id ut Curabitur amet libero mauris condimentum. Ut in lobortis
-                  nulla sed augueuisque aenean
-                %a.f-news-item__info_more.f-more.f-secondary-b{:href => "#"}
-                  Leia Mais
-                  %i.fa.fa-chevron-circle-right
-  %section.b-infoblock.b-diagonal-line-bg-light
-    .container
-      %h2.f-center.f-primary-b O que dizem nossos assinantes ?
-      %p.b-infoblock-description.f-desc-section.f-center.f-employee__desc.f-small.f-primary-l Etiam consectetur pellentesque justo. Sed tristique bibendum elit non molestie. Donec et libero rutrum
-      .row{"data-animate-group-wrap" => ""}
-        .col-sm-6.col-xs-12
-          .b-mention-item
-            .b-mention-item__user.f-center
-              .b-mention-item__user_img
-                %img.fade-in-animate{:alt => "", "data-animate-group" => "2", "data-retina" => "", :src => "img/users/user_md.png"}/
-              .b-mention-item__user_info.f-mention-item__user_info
-                .f-mention-item__user_name.f-primary-b KIYOSHI HARADA
-                .f-mention-item__user_position Advogado
-            .b-remaining
-              .b-mention-item__comment
-                .b-mention-item__comment_text.f-mention-item__comment_text
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, sem quis lacinia faucibus, orci ipsum gravida tortor orbi sagittis, sem quis. Nunc eget magna mattis, scelerisque nisi non
-                  %br/
-                  %a.f-primary-it.f-more{:href => "http://google.com", :target => "_blank"} http://google.com
-        .col-sm-6.col-xs-12
-          .b-mention-item
-            .b-mention-item__user.f-center
-              .b-mention-item__user_img
-                %img.fade-in-animate{:alt => "", "data-animate-group" => "2", "data-retina" => "", :src => "img/users/user_md_2.png"}/
-              .b-mention-item__user_info.f-mention-item__user_info
-                .f-mention-item__user_name.f-primary-b LUIZ GOMES
-                .f-mention-item__user_position Jurista e professor
-            .b-remaining
-              .b-mention-item__comment
-                .b-mention-item__comment_text.f-mention-item__comment_text
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, sem quis lacinia faucibus, orci ipsum gravida tortor orbi sagittis, sem quis. Nunc eget magna mattis
-                  %br/
-                  %a.f-primary-it.f-more{:href => "http://apple.com", :target => "_blank"} http://apple.com
-    .b-carousel-reset.b-carousel-arr-out.b-carousel-small-arr.f-carousel-small-arr.b-remaining
-      .f-center.b-logo-group.j-logo-slider
-        .b-logo-item
-          %a{:href => "#"}
-            %img.is-normal{:alt => "", :src => "img/slider/partner/client-logo-1.png"}/
-            %img.is-hover{:alt => "", :src => "img/slider/partner/client-logo-1h.png"}/
-        .b-logo-item
-          %a{:href => "#"}
-            %img.is-normal{:alt => "", :src => "img/slider/partner/client-logo-2.png"}/
-            %img.is-hover{:alt => "", :src => "img/slider/partner/client-logo-2h.png"}/
-        .b-logo-item
-          %a{:href => "#"}
-            %img.is-normal{:alt => "", :src => "img/slider/partner/client-logo-3.png"}/
-            %img.is-hover{:alt => "", :src => "img/slider/partner/client-logo-3h.png"}/
-        .b-logo-item
-          %a{:href => "#"}
-            %img.is-normal{:alt => "", :src => "img/slider/partner/client-logo-4.png"}/
-            %img.is-hover{:alt => "", :src => "img/slider/partner/client-logo-4h.png"}/
-        .b-logo-item
-          %a{:href => "#"}
-            %img.is-normal{:alt => "", :src => "img/slider/partner/client-logo-5.png"}/
-            %img.is-hover{:alt => "", :src => "img/slider/partner/client-logo-5h.png"}/
-        .b-logo-item
-          %a{:href => "#"}
-            %img.is-normal{:alt => "", :src => "img/slider/partner/client-logo-3.png"}/
-            %img.is-hover{:alt => "", :src => "img/slider/partner/client-logo-3h.png"}/
-        .b-logo-item
-          %a{:href => "#"}
-            %img.is-normal{:alt => "", :src => "img/slider/partner/client-logo-4.png"}/
-            %img.is-hover{:alt => "", :src => "img/slider/partner/client-logo-4h.png"}/
-        .b-logo-item
-          %a{:href => "#"}
-            %img.is-normal{:alt => "", :src => "img/slider/partner/client-logo-5.png"}/
-            %img.is-hover{:alt => "", :src => "img/slider/partner/client-logo-5h.png"}/
+%section.b-infoblock--small
+  .container
+    .row.b-col-default-indent
+      .col-md-8.col-md-offset-2
+        %h2.f-primary-l.f-center.c-default Nosso preço
+        %p.f-primary-l.f-center Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat nunc at augue tincidunt vehicula. Donec viverra semper arcu ut blandit. Suspendisse ac tempus diam. Duis dignissim lacinia sapien in tempor.
+    .b-shortcode-example.b-null-bottom-indent
+      .b-pricing-info__container.f-center
+        .b-pricing-info__item.f-pricing-info__item.col-sm-6.col-md-3.col-xs-12
+          .b-pricing-info__item-row.b-pricing-info__item-title
+            %h4.f-primary-b Básico
+          .b-pricing-info__item-row.b-pricing-info__item-price
+            %h2.f-primary-b Gratuito
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row
+            %p Lorem Ipsumt
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row.b-pricing-info__item-btn-row
+            %a.b-btn.f-btn.b-btn-sm.f-primary-b Assinar
+        .b-pricing-info__item.f-pricing-info__item.col-sm-6.col-md-3.col-xs-12
+          .b-pricing-info__item-row.b-pricing-info__item-title
+            %h4.f-primary-b Plano Prata
+          .b-pricing-info__item-row.b-pricing-info__item-price
+            %h2.f-primary-b
+              R$ 2 /
+              %small.f-primary mês
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row
+            %p Lorem Ipsumt
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row.b-pricing-info__item-btn-row
+            %a.b-btn.f-btn.b-btn-sm.f-primary-b Assinar
+        .clearfix.visible-sm-block
+        .b-pricing-info__item.f-pricing-info__item.col-sm-6.col-md-3.col-xs-12
+          .b-pricing-info__item-row.b-pricing-info__item-title
+            %h4.f-primary-b Plano Ouro
+          .b-pricing-info__item-row.b-pricing-info__item-price
+            %h2.f-primary-b
+              R$10 /
+              %small.f-primary mês
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row
+            %p Lorem Ipsumt
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row.b-pricing-info__item-btn-row
+            %a.b-btn.f-btn.b-btn-sm.f-primary-b Assinar
+        .b-pricing-info__item.f-pricing-info__item.col-sm-6.col-md-3.col-xs-12
+          .b-pricing-info__item-row.b-pricing-info__item-title
+            %h4.f-primary-b Plano Diamante
+          .b-pricing-info__item-row.b-pricing-info__item-price
+            %h2.f-primary-b
+              R$39 /
+              %small.f-primary mês
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row
+            %p Lorem Ipsumt
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row
+            %p Lorem Ipsum
+          .b-pricing-info__item-row.b-pricing-info__item-btn-row
+            %a.b-btn.f-btn.b-btn-sm.f-primary-b Assinar
+%section.b-infoblock.b-desc-section-container
+  .container
+    %h2.f-center.f-primary-l
+      Nossas
+      %strong.f-primary-b Notícias
+    %p.b-infoblock-description.f-desc-section.f-center.f-employee__desc.f-small.f-primary-l Reprehendunt in, quo ea esse civibus suavitate. Pro gubergren persecuti moderatius, id laudem vix, an eos. Adversarium principes.
+    .b-carousel-primary
+      .j-carousel-primary
+        .b-carousel-primary__item
+          .b-news-item.f-news-item
+            .hidden-xs.b-news-item__img.view.view-sixth
+              %img{:alt => "", "data-retina" => "", :src => "img/homepage/news_1.png"}/
+              .b-item-hover-action.f-center.mask
+                .b-item-hover-action__inner
+                  .b-item-hover-action__inner-btn_group
+                    %a.b-btn.f-btn.b-btn-light.f-btn-light.info{:href => "#"}
+                      %i.fa.fa-link
+            .b-news-item__info
+              .b-news-item__info_title.f-news-item__info_title.f-primary-b Vestibulum accumsan
+              .b-news-item__info_additional
+                %span.f-news-item__info_additional_item.b-news-item__info_additional_item
+                  %i.fa.fa-calendar-o
+                  22 de Janeiro
+                %span.f-news-item__info_additional_item.b-news-item__info_additional_item
+                  %i.fa.fa-comments
+                  2 comentários
+              .b-news-item__info_text.f-news-item__info_text
+                Vestibulum accumsan habitasse dictum id ut Curabitur amet libero mauris condimentum. Ut in lobortis
+                nulla sed augueuisque aenean
+              %a.f-news-item__info_more.f-more.f-secondary-b{:href => "#"}
+                Leia Mais
+                %i.fa.fa-chevron-circle-right
+        .b-carousel-primary__item
+          .b-news-item.f-news-item
+            .hidden-xs.b-news-item__img.view.view-sixth
+              %img{:alt => "", "data-retina" => "", :src => "img/homepage/news_1.png"}/
+              .b-item-hover-action.f-center.mask
+                .b-item-hover-action__inner
+                  .b-item-hover-action__inner-btn_group
+                    %a.b-btn.f-btn.b-btn-light.f-btn-light.info{:href => "#"}
+                      %i.fa.fa-link
+            .b-news-item__info
+              .b-news-item__info_title.f-news-item__info_title.f-primary-b Vestibulum accumsan
+              .b-news-item__info_additional
+                %span.f-news-item__info_additional_item.b-news-item__info_additional_item
+                  %i.fa.fa-calendar-o
+                  22 de Janeiro
+                %span.f-news-item__info_additional_item.b-news-item__info_additional_item
+                  %i.fa.fa-comments
+                  2 comentários
+              .b-news-item__info_text.f-news-item__info_text
+                Vestibulum accumsan habitasse dictum id ut Curabitur amet libero mauris condimentum. Ut in lobortis
+                nulla sed augueuisque aenean
+              %a.f-news-item__info_more.f-more.f-secondary-b{:href => "#"}
+                Leia Mais
+                %i.fa.fa-chevron-circle-right
+        .b-carousel-primary__item
+          .b-news-item.f-news-item
+            .hidden-xs.b-news-item__img.view.view-sixth
+              %img{:alt => "", "data-retina" => "", :src => "img/homepage/news_1.png"}/
+              .b-item-hover-action.f-center.mask
+                .b-item-hover-action__inner
+                  .b-item-hover-action__inner-btn_group
+                    %a.b-btn.f-btn.b-btn-light.f-btn-light.info{:href => "#"}
+                      %i.fa.fa-link
+            .b-news-item__info
+              .b-news-item__info_title.f-news-item__info_title.f-primary-b Vestibulum accumsan
+              .b-news-item__info_additional
+                %span.f-news-item__info_additional_item.b-news-item__info_additional_item
+                  %i.fa.fa-calendar-o
+                  22 de Janeiro
+                %span.f-news-item__info_additional_item.b-news-item__info_additional_item
+                  %i.fa.fa-comments
+                  2 comentários
+              .b-news-item__info_text.f-news-item__info_text
+                Vestibulum accumsan habitasse dictum id ut Curabitur amet libero mauris condimentum. Ut in lobortis
+                nulla sed augueuisque aenean
+              %a.f-news-item__info_more.f-more.f-secondary-b{:href => "#"}
+                Leia Mais
+                %i.fa.fa-chevron-circle-right
+        .b-carousel-primary__item
+          .b-news-item.f-news-item
+            .hidden-xs.b-news-item__img.view.view-sixth
+              %img{:alt => "", "data-retina" => "", :src => "img/homepage/news_2.png"}/
+              .b-item-hover-action.f-center.mask
+                .b-item-hover-action__inner
+                  .b-item-hover-action__inner-btn_group
+                    %a.b-btn.f-btn.b-btn-light.f-btn-light.info{:href => "#"}
+                      %i.fa.fa-link
+            .b-news-item__info
+              .b-news-item__info_title.f-news-item__info_title.f-primary-b Vestibulum accumsan
+              .b-news-item__info_additional
+                %span.f-news-item__info_additional_item.b-news-item__info_additional_item
+                  %i.fa.fa-calendar-o
+                  22 de Janeiro
+                %span.f-news-item__info_additional_item.b-news-item__info_additional_item
+                  %i.fa.fa-comments
+                  2 comentários
+              .b-news-item__info_text.f-news-item__info_text
+                Vestibulum accumsan habitasse dictum id ut Curabitur amet libero mauris condimentum. Ut in lobortis
+                nulla sed augueuisque aenean
+              %a.f-news-item__info_more.f-more.f-secondary-b{:href => "#"}
+                Leia Mais
+                %i.fa.fa-chevron-circle-right
+        .b-carousel-primary__item
+          .b-news-item.f-news-item
+            .hidden-xs.b-news-item__img.view.view-sixth
+              %img{:alt => "", "data-retina" => "", :src => "img/homepage/news_1.png"}/
+              .b-item-hover-action.f-center.mask
+                .b-item-hover-action__inner
+                  .b-item-hover-action__inner-btn_group
+                    %a.b-btn.f-btn.b-btn-light.f-btn-light.info{:href => "#"}
+                      %i.fa.fa-link
+            .b-news-item__info
+              .b-news-item__info_title.f-news-item__info_title.f-primary-b Vestibulum accumsan
+              .b-news-item__info_additional
+                %span.f-news-item__info_additional_item.b-news-item__info_additional_item
+                  %i.fa.fa-calendar-o
+                  22 de Janeiro
+                %span.f-news-item__info_additional_item.b-news-item__info_additional_item
+                  %i.fa.fa-comments
+                  2 comentários
+              .b-news-item__info_text.f-news-item__info_text
+                Vestibulum accumsan habitasse dictum id ut Curabitur amet libero mauris condimentum. Ut in lobortis
+                nulla sed augueuisque aenean
+              %a.f-news-item__info_more.f-more.f-secondary-b{:href => "#"}
+                Leia Mais
+                %i.fa.fa-chevron-circle-right
+%section.b-infoblock.b-diagonal-line-bg-light
+  .container
+    %h2.f-center.f-primary-b O que dizem nossos assinantes ?
+    %p.b-infoblock-description.f-desc-section.f-center.f-employee__desc.f-small.f-primary-l Etiam consectetur pellentesque justo. Sed tristique bibendum elit non molestie. Donec et libero rutrum
+    .row{"data-animate-group-wrap" => ""}
+      .col-sm-6.col-xs-12
+        .b-mention-item
+          .b-mention-item__user.f-center
+            .b-mention-item__user_img
+              %img.fade-in-animate{:alt => "", "data-animate-group" => "2", "data-retina" => "", :src => "img/users/user_md.png"}/
+            .b-mention-item__user_info.f-mention-item__user_info
+              .f-mention-item__user_name.f-primary-b KIYOSHI HARADA
+              .f-mention-item__user_position Advogado
+          .b-remaining
+            .b-mention-item__comment
+              .b-mention-item__comment_text.f-mention-item__comment_text
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, sem quis lacinia faucibus, orci ipsum gravida tortor orbi sagittis, sem quis. Nunc eget magna mattis, scelerisque nisi non
+                %br/
+                %a.f-primary-it.f-more{:href => "http://google.com", :target => "_blank"} http://google.com
+      .col-sm-6.col-xs-12
+        .b-mention-item
+          .b-mention-item__user.f-center
+            .b-mention-item__user_img
+              %img.fade-in-animate{:alt => "", "data-animate-group" => "2", "data-retina" => "", :src => "img/users/user_md_2.png"}/
+            .b-mention-item__user_info.f-mention-item__user_info
+              .f-mention-item__user_name.f-primary-b LUIZ GOMES
+              .f-mention-item__user_position Jurista e professor
+          .b-remaining
+            .b-mention-item__comment
+              .b-mention-item__comment_text.f-mention-item__comment_text
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, sem quis lacinia faucibus, orci ipsum gravida tortor orbi sagittis, sem quis. Nunc eget magna mattis
+                %br/
+                %a.f-primary-it.f-more{:href => "http://apple.com", :target => "_blank"} http://apple.com
+  .b-carousel-reset.b-carousel-arr-out.b-carousel-small-arr.f-carousel-small-arr.b-remaining
+    .f-center.b-logo-group.j-logo-slider
+      .b-logo-item
+        %a{:href => "#"}
+          %img.is-normal{:alt => "", :src => "img/slider/partner/client-logo-1.png"}/
+          %img.is-hover{:alt => "", :src => "img/slider/partner/client-logo-1h.png"}/
+      .b-logo-item
+        %a{:href => "#"}
+          %img.is-normal{:alt => "", :src => "img/slider/partner/client-logo-2.png"}/
+          %img.is-hover{:alt => "", :src => "img/slider/partner/client-logo-2h.png"}/
+      .b-logo-item
+        %a{:href => "#"}
+          %img.is-normal{:alt => "", :src => "img/slider/partner/client-logo-3.png"}/
+          %img.is-hover{:alt => "", :src => "img/slider/partner/client-logo-3h.png"}/
+      .b-logo-item
+        %a{:href => "#"}
+          %img.is-normal{:alt => "", :src => "img/slider/partner/client-logo-4.png"}/
+          %img.is-hover{:alt => "", :src => "img/slider/partner/client-logo-4h.png"}/
+      .b-logo-item
+        %a{:href => "#"}
+          %img.is-normal{:alt => "", :src => "img/slider/partner/client-logo-5.png"}/
+          %img.is-hover{:alt => "", :src => "img/slider/partner/client-logo-5h.png"}/
+      .b-logo-item
+        %a{:href => "#"}
+          %img.is-normal{:alt => "", :src => "img/slider/partner/client-logo-3.png"}/
+          %img.is-hover{:alt => "", :src => "img/slider/partner/client-logo-3h.png"}/
+      .b-logo-item
+        %a{:href => "#"}
+          %img.is-normal{:alt => "", :src => "img/slider/partner/client-logo-4.png"}/
+          %img.is-hover{:alt => "", :src => "img/slider/partner/client-logo-4h.png"}/
+      .b-logo-item
+        %a{:href => "#"}
+          %img.is-normal{:alt => "", :src => "img/slider/partner/client-logo-5.png"}/
+          %img.is-hover{:alt => "", :src => "img/slider/partner/client-logo-5h.png"}/
