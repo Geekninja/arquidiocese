@@ -1,39 +1,26 @@
-%h1 Listing cms_parishes
+.card
+  .card-header.ch-alt
+    %h2
+      Paróquias
+      = link_to 'Novo Post', new_cms_parish_path, class: 'btn btn-success pull-right'
+      %small Listagem de paróquias
+  .table-responsive{:style => "overflow: hidden; outline: none;", :tabindex => "3"}
+    %table#data-table-command.table.table-striped.table-vmiddle.bootgrid-table
+      %thead
+        %tr
+          %th #
+          %th Nome
+          %th Publicado
+          %th Data
+          %th{:colspan => '3'} Action
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Phone
-      %th Address
-      %th Priest
-      %th Content
-      %th Publish
-      %th Thumb
-      %th Thumbnail
-      %th Thumbnail active
-      %th Resume
-      %th
-      %th
-      %th
-
-  %tbody
-    - @cms_parishes.each do |cms_parish|
-      %tr
-        %td= cms_parish.name
-        %td= cms_parish.phone
-        %td= cms_parish.address
-        %td= cms_parish.priest
-        %td= cms_parish.content
-        %td= cms_parish.publish
-        %td= cms_parish.thumb
-        %td= cms_parish.thumbnail
-        %td= cms_parish.thumbnail_active
-        %td= cms_parish.resume
-        %td= link_to 'Show', cms_parish
-        %td= link_to 'Edit', edit_cms_parish_path(cms_parish)
-        %td= link_to 'Destroy', cms_parish, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Parish', new_cms_parish_path
+      %tbody
+        - @cms_parishes.each_with_index do |cms_parish, i|
+          %tr
+            %td= i+1
+            %td= cms_parish.name
+            %td= status_helper (cms_parish.publish)
+            %td= cms_parish.created_at.strftime('%d-%m-%Y')
+            %td.col-md-2
+              = link_to '', edit_cms_parish_path(cms_parish), class: 'md md-edit btn btn-primary'
+              = link_to '', cms_parish, :method => :delete, class: 'md md-delete btn btn-danger', :data => { :confirm => 'Are you sure?' }
