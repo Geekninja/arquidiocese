@@ -27,7 +27,11 @@ def second_slider
 end
 
 def parish
+ @parish_help= Cms::Parish.all
 
+ @parish_help.each do |u|
+   yield u
+ end
 end
 
 

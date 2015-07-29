@@ -23,5 +23,6 @@ Rails.application.routes.draw do
       resources :post_categories
       resources :pages
       resources :page_categories
+      resources :parishes
     end
 end
