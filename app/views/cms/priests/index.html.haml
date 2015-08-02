@@ -1,0 +1,33 @@
+%h1 Listing cms_priests
+
+%table
+  %thead
+    %tr
+      %th Who
+      %th Publish
+      %th Content
+      %th Resume
+      %th Title
+      %th Thumb
+      %th Thumb active
+      %th
+      %th
+      %th
+
+  %tbody
+    - @cms_priests.each do |cms_priest|
+      %tr
+        %td= cms_priest.who
+        %td= cms_priest.publish
+        %td= cms_priest.content
+        %td= cms_priest.resume
+        %td= cms_priest.title
+        %td= cms_priest.thumb
+        %td= cms_priest.thumb_active
+        %td= link_to 'Show', cms_priest
+        %td= link_to 'Edit', edit_cms_priest_path(cms_priest)
+        %td= link_to 'Destroy', cms_priest, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Priest', new_cms_priest_path

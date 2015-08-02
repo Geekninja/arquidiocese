@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Who:
+  = @cms_priest.who
+%p
+  %b Publish:
+  = @cms_priest.publish
+%p
+  %b Content:
+  = @cms_priest.content
+%p
+  %b Resume:
+  = @cms_priest.resume
+%p
+  %b Title:
+  = @cms_priest.title
+%p
+  %b Thumb:
+  = @cms_priest.thumb
+%p
+  %b Thumb active:
+  = @cms_priest.thumb_active
+
+= link_to 'Edit', edit_cms_priest_path(@cms_priest)
+\|
+= link_to 'Back', cms_priests_path

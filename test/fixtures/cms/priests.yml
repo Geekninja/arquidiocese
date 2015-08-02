@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  who: 1
+  publish: false
+  content: MyText
+  resume: MyText
+  title: MyString
+  thumb: MyString
+  thumb_active: false
+
+two:
+  who: 1
+  publish: false
+  content: MyText
+  resume: MyText
+  title: MyString
+  thumb: MyString
+  thumb_active: false

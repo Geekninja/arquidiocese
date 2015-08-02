@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150726222743) do
+ActiveRecord::Schema.define(version: 20150802014827) do
 
   create_table "cms_page_categories", force: :cascade do |t|
     t.string   "name"
@@ -77,6 +77,18 @@ ActiveRecord::Schema.define(version: 20150726222743) do
   end
 
   add_index "cms_posts", ["post_category_id"], name: "index_cms_posts_on_post_category_id"
+
+  create_table "cms_priests", force: :cascade do |t|
+    t.integer  "who"
+    t.boolean  "publish"
+    t.text     "content"
+    t.text     "resume"
+    t.string   "title"
+    t.string   "thumb"
+    t.boolean  "thumb_active"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

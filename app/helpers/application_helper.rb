@@ -22,18 +22,21 @@ def post_each(type,limit = 10, order = 'DESC')
   end
 end
 
-def second_slider
-
-end
-
 def parish
- @parish_help= Cms::Parish.all
+ @parish_help = Cms::Parish.all
 
  @parish_help.each do |u|
    yield u
  end
 end
 
+def priest_word(limit = 10, order = 'DESC')
+  @priest_word = Cms::Parish.where(publish: true).limit(limit).order("created_at #{order}")
+
+  @priest_word.each do |w|
+    yield w
+  end
+end
 
 
 
